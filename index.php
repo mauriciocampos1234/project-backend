@@ -15,7 +15,8 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    
+
+
 <base base="<?php echo INCLUDE_PATH; ?>" />
     
     <?php
@@ -31,7 +32,10 @@
         }
     ?>
 
-    
+    <div class="sucesso">Formulário enviado com sucesso!</div>
+	<div class="overlay-loading">
+		<img src="<?php echo INCLUDE_PATH ?>images/ajax-loader.gif" />
+	</div><!--overlay-loading-->
 
     <header>
         <div class="center">
@@ -93,7 +97,7 @@
     <script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
     <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
     <script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
-    <script src="<?php echo INCLUDE_PATH; ?>js/send.js"></script>
+    
     <?php
         if($url == 'home' || $url == ''){
     ?>
@@ -103,7 +107,8 @@
         if($url == 'contato'){
     ?>
     <?php } ?>
-    <script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>
+    <!-- <script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script> -->
+    <script src="<?php echo INCLUDE_PATH; ?>js/formularios.js"></script>
 
 
     <!-- <script>

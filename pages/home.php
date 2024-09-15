@@ -8,10 +8,10 @@
         
         <div class="overlay"></div><!--overlay-->
             <div class="center">
-                <form>
+            
+                <form method="post">
                     <h1>Bem-vindo(a) ao Meu Portfólio!</h1>
-                    <p>Fico muito feliz em ter você aqui. Navegue pelos meus projetos e conheça um pouco mais sobre o meu trabalho e experiência profissional. Increva-se no formulário abaixo para receber ofertas exclusivas!</p>
-                    
+                    <p>Fico muito feliz em ter você aqui. Navegue pelos meus projetos e conheça um pouco mais sobre o meu trabalho e experiência profissional. Increva-se no formulário abaixo para receber ofertas exclusivas!</p>                    
                     <input type="email" name="email" placeholder="Insira seu e-mail" required />
                     <input type="hidden" name="identificador" value="form_home" />
                     <input type="submit" name="acao" value="Cadastrar!">
@@ -187,7 +187,7 @@
     <div class="contato-container">
         <div class="center">
             <h2 class="title">Entre em Contato</h2>
-            <form id="formulario" action="https://formspree.io/f/xpwapdow" method="post">
+            <form method="post">
                 <input type="text" name="nome" placeholder="Seu nome..." required>
                 <div></div>
                 <input type="text" name="email" placeholder="Seu E-mail..." required>
@@ -196,8 +196,8 @@
                 <div></div>
                 <textarea placeholder="Digite aqui sua mensagem..." name="mensagem" id=""></textarea>
                 <div></div>
-                <input type="submit" name="acao" value="Enviar!">
-                <p id="my-form-status"></p>
+                <input type="hidden" name="identificador" value="form_contato">
+                <input type="submit" name="acao" value="Enviar!">                
             </form>
         </div>        
     </div><!--Formulário do mapa-->

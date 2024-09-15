@@ -41,7 +41,7 @@
     <div class="contato-container">
         <div class="center">
             <h2 class="title">Entre em Contato</h2>
-            <form id="formulario" action="https://formspree.io/f/xpwapdow" method="post">
+            <form method="post">
                 <input type="text" name="nome" placeholder="Seu nome..." required>
                 <div></div>
                 <input type="text" name="email" placeholder="Seu E-mail..." required>
@@ -50,8 +50,8 @@
                 <div></div>
                 <textarea placeholder="Digite aqui sua mensagem..." name="mensagem" id=""></textarea>
                 <div></div>
-                <input type="submit" name="acao" value="Enviar!">
-                <p id="my-form-status"></p>
+                <input type="hidden" name="identificador" value="form_contato">
+                <input type="submit" name="acao" value="Enviar!">                
             </form>
         </div>        
     </div><!--Formulário do mapa-->
