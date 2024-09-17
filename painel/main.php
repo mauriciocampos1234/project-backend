@@ -21,7 +21,7 @@
     <header>
         <div class="center">
             <div class="loggout">
-                <a href="<?php echo INCLUDE_PATH_PAINEL ?>loggout"><i class="fa fa-window-close"></i></a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-window-close"></i></a>
             </div><!--loggout-->
             <div class="clear"></div><!--Resetando a flutuação-->
         </div><!--center-->
