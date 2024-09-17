@@ -11,7 +11,7 @@
             
                 <form method="post">
                     <h1>Bem-vindo(a) ao Meu Portfólio!</h1>
-                    <p>Fico muito feliz em ter você aqui. Navegue pelos meus projetos e conheça um pouco mais sobre o meu trabalho e experiência profissional. Increva-se no formulário abaixo para receber ofertas exclusivas!</p>                    
+                    <p>Fico muito feliz em ter você aqui. Navegue pelos meus projetos e conheça um pouco mais sobre o meu trabalho e experiência profissional. Inscreva-se no formulário abaixo para receber ofertas exclusivas!</p>                    
                     <input type="email" name="email" placeholder="Insira seu e-mail" required />
                     <input type="hidden" name="identificador" value="form_home" />
                     <input type="submit" name="acao" value="Cadastrar!">
