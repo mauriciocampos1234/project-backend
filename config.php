@@ -25,7 +25,7 @@
 	define('DATABASE','meu_portfolio_back-end');
 
 	//Constantes para o painel de controle
-	define('NOME_EMPRESA','Danki Code');
+	define('NOME_EMPRESA','Maurício Campos');
 
 	// //Funções do painel
 	function pegaCargo($cargo){

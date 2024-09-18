@@ -8,7 +8,7 @@
 		$corpo.="<hr>";
 	}
 	$info = array('assunto'=>$assunto,'corpo'=>$corpo);
-	$mail = new Email('br994.hostgator.com.br','adm@camposengenhariacomputacional.online','Kenko5419@','Mauricio');
+	$mail = new Email('smtp.titan.email','adm@camposengenhariacomputacional.online','Kenko5419@','Mauricio');
 	$mail->addAdress('rjeejr@gmail.com','Campos');
 	$mail->formatarEmail($info);
 	if($mail->enviarEmail()){

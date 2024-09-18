@@ -39,19 +39,19 @@
         </div><!--box-usuario-->
 
         <div class="items-menu">
-            <h2>Cadastro</h2>
-            <a href="">Cadastrar Depoimentos</a>
-            <a href="">Cadastrar Serviço</a>
-            <a href="">Cadastrar Slides</a>
-            <h2>Gestão</h2>
-            <a href="">Listar Depoimentos</a>
-            <a href="">Listar Serviços</a>
-            <a href="">Listar Slides</a>
-            <h2>Administração do Painel</h2>
-            <a href="">Editar Usuários</a>
-            <a href="">Adicionar Usuários</a>
-            <h2>Configuração Geral</h2>
-            <a href="">Editar</a>
+        <h2>Cadastro</h2>
+		<a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
+		<a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
+		<a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-slides">Cadastrar Slides</a>
+		<h2>Gestão</h2>
+		<a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
+		<a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-servicos">Listar Serviços</a>
+		<a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-slides">Listar Slides</a>
+		<h2>Administração do painel</h2>
+		<a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
+		<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuário</a>
+		<h2>Configuração Geral</h2>
+		<a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
             
         </div><!--items-menu-->        
         </div><!--menu-wraper-->
@@ -63,6 +63,7 @@
                 <i class="fa fa-bars"></i>
             </div><!--menu-btn-->
             <div class="loggout">
+            <a <?php if(@$_GET['url'] == ''){ ?> style="background: #60727a;padding: 15px;" <?php } ?> href="<?php echo INCLUDE_PATH_PAINEL ?>"> <i class="fa fa-home"></i> <span>Página Inicial</span></a>
                 <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"> <i class="fa fa-window-close"></i> <span>Sair</span></a>
             </div><!--loggout-->
             <div class="clear"></div><!--Resetando a flutuação-->
@@ -70,39 +71,11 @@
     </header>
     
     <div class="content">
-        <div class="box-content left w100">
-            <!-- <h2><i class="fa fa-home"> Painel de controle - <?php echo $nomeEmpresa ?></i></h2> -->
-            <div class="box-metricas">
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Usuários Online</h2>
-                        <p>10</p>
-                    </div><!--box-metrica-wraper-->
-                </div><!--box-metrica-single-->
-
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Total de Visitas</h2>
-                        <p>100</p>
-                    </div><!--box-metrica-wraper-->
-                </div><!--box-metrica-single-->
-
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Visitas Hoje</h2>
-                        <p>3</p>
-                    </div><!--box-metrica-wraper-->
-                </div><!--box-metrica-single-->
-                <div class="clear"></div><!--Resetando a flutuação-->
-            </div><!--box-metricas-->
-        
-        </div><!--box-content (1)-->
-
-
-        
+        <?php Painel::carregarPagina(); ?>
     </div><!--content-->
     
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/jquery.mask.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 </body>
 </html>
