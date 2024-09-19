@@ -18,7 +18,7 @@ $(function(){
 				$('.sucesso').fadeIn();
 				setTimeout(function(){
 					$('.sucesso').fadeOut();
-				},3000)
+				},1000)
 			}else{
 				//Algo deu errado.
 				$('.overlay-loading').fadeOut();

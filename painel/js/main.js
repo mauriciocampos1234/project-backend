@@ -5,7 +5,7 @@ $(function(){
     var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
 
     if(windowSize <= 768){
-        $('.menu').css('whidth','0').css('padding','0');
+        $('.menu').css('width','0').css('padding','0');
         
         open = false;
     }
@@ -36,13 +36,13 @@ $(function(){
     $(window).resize(function(){
         windowSize = $(window)[0].innerWidth;
         if(windowSize <= 768){
-            $('.menu').css('whidth','0').css('padding','0');
-            $('.content,header').css('whidth','100%').css('left','0');
+            $('.menu').css('width','0').css('padding','0');
+            $('.content,header').css('','100%').css('left','0');
             open = false;
         }else{
             open = true;
             $('.content,header').css('width','calc(100% - 250px)').css('left','250px');
-            $('.menu').css('whidth','250px').css('padding','10px 0');
+            $('.menu').css('','250px').css('padding','10px 0');
         }
     })
 })
