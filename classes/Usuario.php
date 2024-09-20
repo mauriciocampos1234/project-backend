@@ -20,6 +20,11 @@
 				return false;
 		}
 
+		// public static function cadastrarUsuario($user,$senha,$imagem,$nome,$cargo){
+		// 	$sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.usuarios` VALUES (null,?,?,?,?,?)");
+		// 	$sql->execute(array($user,$senha,$imagem,$nome,$cargo));
+		// }
+
 		public static function cadastrarUsuario($user,$senha,$imagem,$nome,$cargo){
 			$sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.usuarios` VALUES (null,?,?,?,?,?)");
 			$sql->execute(array($user,$senha,$imagem,$nome,$cargo));

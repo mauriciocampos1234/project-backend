@@ -3,10 +3,10 @@
 	class Painel
 	{
 		
-		// public static $cargos = [
-		// '0' => 'Normal',
-		// '1' => 'Sub Administrador',
-		// '2' => 'Administrador'];
+		public static $cargos = [
+		'0' => 'Normal',
+		'1' => 'Sub Administrador',
+		'2' => 'Administrador'];
 		
 		public static function logado(){
 			return isset($_SESSION['login']) ? true : false;
@@ -79,33 +79,33 @@
 			@unlink('uploads/'.$file);
 		}
 
-		public static function insert($arr){
-			$certo = true;
-			$nome_tabela = $arr['nome_tabela'];
-			$query = "INSERT INTO `$nome_tabela` VALUES (null";
-			foreach ($arr as $key => $value) {
-				$nome = $key;
-				$valor = $value;
-				if($nome == 'acao' || $nome == 'nome_tabela')
-					continue;
-				if($value == ''){
-					$certo = false;
-					break;
-				}
-				$query.=",?";
-				$parametros[] = $value;
-			}
+		// public static function insert($arr){
+		// 	$certo = true;
+		// 	$nome_tabela = $arr['nome_tabela'];
+		// 	$query = "INSERT INTO `$nome_tabela` VALUES (null";
+		// 	foreach ($arr as $key => $value) {
+		// 		$nome = $key;
+		// 		$valor = $value;
+		// 		if($nome == 'acao' || $nome == 'nome_tabela')
+		// 			continue;
+		// 		if($value == ''){
+		// 			$certo = false;
+		// 			break;
+		// 		}
+		// 		$query.=",?";
+		// 		$parametros[] = $value;
+		// 	}
 
-			$query.=")";
-			if($certo == true){
-				$sql = MySql::conectar()->prepare($query);
-				$sql->execute($parametros);
-				$lastId = MySql::conectar()->lastInsertId();
-				$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = $lastId");
-				$sql->execute(array($lastId));
-			}
-			return $certo;
-		}
+		// 	$query.=")";
+		// 	if($certo == true){
+		// 		$sql = MySql::conectar()->prepare($query);
+		// 		$sql->execute($parametros);
+		// 		$lastId = MySql::conectar()->lastInsertId();
+		// 		$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = $lastId");
+		// 		$sql->execute(array($lastId));
+		// 	}
+		// 	return $certo;
+		// }
 
 		// public static function update($arr,$single = false){
 		// 	$certo = true;
