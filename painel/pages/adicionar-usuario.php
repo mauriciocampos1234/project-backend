@@ -1,7 +1,5 @@
 <?php
 	verificaPermissaoPagina(2);
-		
-	
 ?>
 <div class="box-content">
 	<h2><i class="fa fa-pencil"></i> Adicionar Usuário</h2>
@@ -15,36 +13,37 @@
 				$senha = $_POST['password'];
 				$imagem = $_FILES['imagem'];
 				$cargo = $_POST['cargo'];
-				
+
 				if($login == ''){
 					Painel::alert('erro','O login está vázio!');
-				}elseif($nome == ''){
+				}else if($nome == ''){
 					Painel::alert('erro','O nome está vázio!');
-				}elseif($senha == ''){
+				}else if($senha == ''){
 					Painel::alert('erro','A senha está vázia!');
-				}elseif($cargo == ''){
+				}else if($cargo == ''){
 					Painel::alert('erro','O cargo precisa estar selecionado!');
-				}elseif($imagem['name'] == ''){
+				}else if($imagem['name'] == ''){
 					Painel::alert('erro','A imagem precisa estar selecionada!');
 				}else{
+					//Podemos cadastrar!
 					if($cargo >= $_SESSION['cargo']){
 						Painel::alert('erro','Você precisa selecionar um cargo menor que o seu!');
-					}elseif(Painel::imagemValida($imagem) == false){
-						Painel::alert('erro','A imagem precisa ser um arquivo válido!');
-					}elseif(Usuario::userExists($login)){
+					}else if(Painel::imagemValida($imagem) == false){
+						Painel::alert('erro','O formato especificado não está correto!');
+					}else if(Usuario::userExists($login)){
 						Painel::alert('erro','O login já existe, selecione outro por favor!');
 					}else{
+						//Apenas cadastrar no banco de dados!
 						$usuario = new Usuario();
 						$imagem = Painel::uploadFile($imagem);
 						$usuario->cadastrarUsuario($login,$senha,$imagem,$nome,$cargo);
 						Painel::alert('sucesso','O cadastro do usuário '.$login.' foi feito com sucesso!');
 					}
 				}
-				
-				
-				
-				
 
+
+				
+				
 			}
 		?>
 
